@@ -1,0 +1,43 @@
+/usr/local/bin/python3.13 /Users/uliana/Desktop/Курсовая/insert_queries.py
+Loaded 3000 rows from file
+Starting single-row insertion...
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+Single-row insertion completed. Time: 2749.07 sec
+Starting bulk insertion...
+CPU overload detected, retrying in 5 seconds (attempt 1/3)
+Bulk insertion completed. Time: 1.17 sec
+Starting buffer insertion...
+Buffer insertion completed. Time: 11.16 sec
+Starting Native format insertion...
+Native insertion completed. Time: 0.76 sec
+
+Performance test results:
+single: 2749.07 sec (1 rows/sec)
+bulk: 1.17 sec (2571 rows/sec)
+buffer: 11.16 sec (269 rows/sec)
+native: 0.76 sec (3950 rows/sec)
+
+Results saved to insertion_results.csv
+
+Process finished with exit code 0

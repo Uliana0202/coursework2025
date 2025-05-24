@@ -1,0 +1,5 @@
+Method,Time (sec),Rows/sec
+single,2749.07,1
+bulk,1.17,2571
+buffer,11.16,269
+native,0.76,3950

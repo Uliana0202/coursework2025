@@ -1,0 +1,113 @@
+"tables","query","event_time","query_duration_ms","read_rows","read_bytes","memory_usage","projections","views"
+{'course_db.logs_with_indexes'},"ALTER TABLE logs_with_indexes 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE timestamp = '2000-07-05 08:27:55'",2025-05-23 14:20:34,1004,0,0,0,{},{}
+{'course_db.logs_with_indexes'},"ALTER TABLE logs_with_indexes 
+UPDATE 
+    comment = 'bad day'
+WHERE toDate(timestamp) = '2024-04-25'",2025-05-23 14:20:48,570,0,0,0,{},{}
+{'course_db.logs_with_indexes_v2'},"ALTER TABLE logs_with_indexes_v2 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE timestamp = '2000-07-05 08:27:55'",2025-05-23 22:12:46,467,0,0,0,{},{}
+{'course_db.logs_with_indexes_v2'},"ALTER TABLE logs_with_indexes_v2 
+UPDATE 
+    comment = 'bad day'
+WHERE toDate(timestamp) = '2024-04-25'",2025-05-23 22:12:56,401,0,0,0,{},{}
+"{'course_db.logs_with_indexes_metadata','course_db.logs_with_indexes_v3'}","ALTER TABLE logs_with_indexes_metadata 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_indexes_v3 
+    WHERE timestamp = '2000-07-05 08:27:55'
+)",2025-05-23 22:23:21,549,0,0,0,{},{}
+"{'course_db.logs_with_indexes_metadata','course_db.logs_with_indexes_v3'}","ALTER TABLE logs_with_indexes_metadata 
+UPDATE 
+    comment = 'bad day'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_indexes_v3 
+    WHERE toDate(timestamp) = '2024-04-25'
+)",2025-05-23 22:23:31,529,0,0,0,{},{}
+{'course_db.logs_with_indexes'},OPTIMIZE TABLE logs_with_indexes FINAL,2025-05-23 22:24:01,9685,0,0,32,{},{}
+{'course_db.logs_with_indexes_v2'},OPTIMIZE TABLE logs_with_indexes_v2 FINAL,2025-05-23 22:24:06,1816,0,0,32,{},{}
+{'course_db.logs_with_indexes_v3'},OPTIMIZE TABLE logs_with_indexes_v3 FINAL,2025-05-23 22:24:14,3337,0,0,32,{},{}
+{'course_db.logs_with_indexes_metadata'},OPTIMIZE TABLE logs_with_indexes_metadata FINAL,2025-05-23 22:24:25,7661,0,0,32,{},{}
+{'course_db.logs_with_projections'},"ALTER TABLE logs_with_projections 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE timestamp = '2000-07-05 08:27:55'",2025-05-23 22:27:30,84,0,0,0,{},{}
+{'course_db.logs_with_projections'},"ALTER TABLE logs_with_projections 
+UPDATE 
+    comment = 'bad day'
+WHERE toDate(timestamp) = '2024-04-25'",2025-05-23 22:27:36,71,0,0,0,{},{}
+{'course_db.logs_with_projections_v2'},"ALTER TABLE logs_with_projections_v2 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE timestamp = '2000-07-05 08:27:55'",2025-05-23 22:38:47,893,0,0,0,{},{}
+{'course_db.logs_with_projections_v2'},"ALTER TABLE logs_with_projections_v2 
+UPDATE 
+    comment = 'bad day'
+WHERE toDate(timestamp) = '2024-04-25'",2025-05-23 22:38:52,539,0,0,0,{},{}
+"{'course_db.logs_with_projections_metadata','course_db.logs_with_projections_v3'}","ALTER TABLE logs_with_projections_metadata 
+UPDATE 
+    comment = 'two tee to two two'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_projections_v3 
+    WHERE timestamp = '2000-07-05 08:27:55'
+)",2025-05-23 22:39:00,776,0,0,0,{},{}
+"{'course_db.logs_with_projections_metadata','course_db.logs_with_projections_v3'}","ALTER TABLE logs_with_projections_metadata 
+UPDATE 
+    comment = 'bad day'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_projections_v3 
+    WHERE toDate(timestamp) = '2024-04-25'
+)",2025-05-23 22:39:07,672,0,0,0,{},{}
+{'course_db.logs_with_projections'},OPTIMIZE TABLE logs_with_projections FINAL,2025-05-23 22:42:22,20944,0,0,32,{},{}
+{'course_db.logs_with_projections_v2'},OPTIMIZE TABLE logs_with_projections_v2 FINAL,2025-05-23 22:42:42,16289,0,0,32,{},{}
+{'course_db.logs_with_projections_v3'},OPTIMIZE TABLE logs_with_projections_v3 FINAL,2025-05-23 22:42:55,11907,0,0,48,{},{}
+{'course_db.logs_with_projections_metadata'},OPTIMIZE TABLE logs_with_projections_metadata FINAL,2025-05-23 22:43:08,10250,0,0,48,{},{}
+{'course_db.logs_with_indexes'},"ALTER TABLE logs_with_indexes 
+UPDATE 
+	description = 'hello world'
+WHERE subsystem = 'bd'",2025-05-24 08:49:09,547,0,0,0,{},{}
+{'course_db.logs_with_indexes_v2'},"ALTER TABLE logs_with_indexes_v2 
+UPDATE 
+    description = 'hello world'
+WHERE subsystem = 'bd'",2025-05-24 08:49:33,358,0,0,0,{},{}
+"{'course_db.logs_with_indexes_metadata','course_db.logs_with_indexes_v3'}","ALTER TABLE logs_with_indexes_metadata 
+UPDATE 
+    description = 'hello world'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_indexes_v3 
+    WHERE subsystem = 'bd'
+)",2025-05-24 08:50:48,689,0,0,0,{},{}
+{'course_db.logs_with_indexes'},OPTIMIZE TABLE logs_with_indexes FINAL,2025-05-24 08:51:33,25643,0,0,32,{},{}
+{'course_db.logs_with_indexes_v2'},OPTIMIZE TABLE logs_with_indexes_v2 FINAL,2025-05-24 08:51:47,8873,0,0,32,{},{}
+{'course_db.logs_with_indexes_v3'},OPTIMIZE TABLE logs_with_indexes_v3 FINAL,2025-05-24 08:51:59,5688,0,0,32,{},{}
+{'course_db.logs_with_indexes_metadata'},OPTIMIZE TABLE logs_with_indexes_metadata FINAL,2025-05-24 08:52:10,6479,0,0,32,{},{}
+{'course_db.logs_with_projections'},"ALTER TABLE logs_with_projections 
+UPDATE 
+    description = 'hello world'
+WHERE subsystem = 'bd'",2025-05-24 08:58:40,130,0,0,0,{},{}
+{'course_db.logs_with_projections_v2'},"ALTER TABLE logs_with_projections_v2 
+UPDATE 
+    description = 'hello world'
+WHERE subsystem = 'bd'",2025-05-24 08:58:45,124,0,0,0,{},{}
+"{'course_db.logs_with_projections_metadata','course_db.logs_with_projections_v3'}","ALTER TABLE logs_with_projections_metadata 
+UPDATE 
+    description = 'hello world'
+WHERE log_id IN (
+    SELECT log_id 
+    FROM logs_with_projections_v3 
+    WHERE subsystem = 'bd'
+)",2025-05-24 08:59:30,837,0,0,0,{},{}
+{'course_db.logs_with_projections'},OPTIMIZE TABLE logs_with_projections FINAL,2025-05-24 08:59:50,13781,0,0,32,{},{}
+{'course_db.logs_with_projections_v2'},OPTIMIZE TABLE logs_with_projections_v2 FINAL,2025-05-24 09:00:05,11437,0,0,32,{},{}
+{'course_db.logs_with_projections_v3'},OPTIMIZE TABLE logs_with_projections_v3 FINAL,2025-05-24 09:00:22,11425,0,0,48,{},{}
+{'course_db.logs_with_projections_metadata'},OPTIMIZE TABLE logs_with_projections_metadata FINAL,2025-05-24 09:00:32,6092,0,0,48,{},{}

@@ -1,0 +1,228 @@
+"tables","query","event_time","query_duration_ms","read_rows","read_bytes","memory_usage","projections","views"
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21',2025-05-16 04:22:51,322,50000,200000,66984,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21',2025-05-16 04:22:57,239,8193,32784,45024,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21',2025-05-16 04:23:02,504,8193,32784,45024,{'course_db.logs_with_indexes._minmax_count_projection'},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21',2025-05-16 04:23:08,521,8193,32784,41800,{'course_db.logs_with_projections._minmax_count_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user7%',2025-05-16 04:23:30,345,50000,126909,67552,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user7%',2025-05-16 04:23:35,189,50000,126909,74568,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user7%',2025-05-16 04:23:40,185,50000,126909,68704,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user7%',2025-05-16 04:23:45,145,8192,12605,59856,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE 'error%',2025-05-16 04:24:04,413,50000,51700,66792,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE 'error%',2025-05-16 04:24:10,560,50000,51700,70920,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE 'error%',2025-05-16 04:24:15,295,50000,51700,69160,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE 'error%',2025-05-16 04:24:20,288,50000,51700,71000,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE subsystem LIKE 'u%',2025-05-16 04:24:44,292,50000,50361,67560,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE subsystem LIKE 'u%',2025-05-16 04:24:50,359,50000,50361,70920,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE subsystem LIKE 'u%',2025-05-16 04:24:55,179,50000,50361,68872,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE subsystem LIKE 'u%',2025-05-16 04:25:00,259,50000,50361,70488,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%',2025-05-16 04:25:19,207,50000,326909,67568,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%',2025-05-16 04:25:24,138,16385,125229,46696,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%',2025-05-16 04:25:29,450,50000,326909,69408,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%',2025-05-16 04:25:35,545,50000,326909,71408,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%',2025-05-16 04:25:58,913,50000,251700,76888,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%',2025-05-16 04:26:04,495,41808,210740,80648,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%',2025-05-16 04:26:10,653,41808,210740,77496,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%',2025-05-16 04:26:15,202,41808,210740,80728,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND subsystem LIKE 'u%',2025-05-16 04:26:34,406,50000,250361,77336,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND subsystem LIKE 'u%',2025-05-16 04:26:39,517,41808,209401,80936,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND subsystem LIKE 'u%',2025-05-16 04:26:45,650,41808,209401,77336,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND subsystem LIKE 'u%',2025-05-16 04:26:51,931,41808,209401,81016,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:27:09,151,50000,178609,66720,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:27:15,656,50000,178609,71072,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:27:20,417,50000,178609,69232,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:27:26,595,50000,178609,71072,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user7%' AND subsystem LIKE 'u%',2025-05-16 04:27:48,456,50000,177270,77040,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user7%' AND subsystem LIKE 'u%',2025-05-16 04:27:54,497,50000,177270,84688,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user7%' AND subsystem LIKE 'u%',2025-05-16 04:27:59,344,50000,177270,80848,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user7%' AND subsystem LIKE 'u%',2025-05-16 04:28:04,130,8192,21158,59696,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:28:32,622,50000,102061,67560,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:28:37,480,50000,102061,71080,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:28:43,560,50000,102061,69240,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:28:49,496,50000,102061,70632,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:29:09,230,50000,407218,67272,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:29:15,209,16385,143313,47016,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:29:20,220,50000,407218,69568,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR event LIKE 'error%',2025-05-16 04:29:25,284,50000,407218,70960,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR subsystem LIKE 'u%',2025-05-16 04:29:45,797,50000,404540,67720,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR subsystem LIKE 'u%',2025-05-16 04:29:51,642,16385,141974,47016,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR subsystem LIKE 'u%',2025-05-16 04:29:56,314,50000,404540,69728,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR subsystem LIKE 'u%',2025-05-16 04:30:01,250,50000,404540,71408,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:30:24,540,50000,304122,67720,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:30:29,459,50000,304122,71560,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:30:35,165,50000,304122,69560,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:30:40,231,50000,304122,71400,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user7%' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:30:58,108,50000,257940,67464,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user7%' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:31:03,255,50000,257940,71144,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user7%' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:31:08,172,50000,257940,69304,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user7%' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-16 04:31:14,259,50000,257940,71224,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' AND event LIKE 'error%' AND subsystem LIKE 'u%',2025-05-16 04:31:37,533,50000,457940,67960,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' AND event LIKE 'error%' AND subsystem LIKE 'u%',2025-05-16 04:31:42,499,16385,160058,47016,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' AND event LIKE 'error%' AND subsystem LIKE 'u%',2025-05-16 04:31:48,300,50000,457940,69824,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' AND event LIKE 'error%' AND subsystem LIKE 'u%',2025-05-16 04:31:53,272,50000,457940,71840,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21',2025-05-16 04:34:04,492,50000,200000,67336,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21',2025-05-16 04:34:09,136,8193,32784,44976,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21',2025-05-16 04:34:14,272,9041,36176,44976,{'course_db.logs_with_indexes._minmax_count_projection'},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21',2025-05-16 04:34:19,182,8193,32784,44976,{'course_db.logs_with_projections._minmax_count_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user8%',2025-05-16 04:34:37,138,50000,126909,67392,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user8%',2025-05-16 04:34:43,341,50000,126909,70464,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user8%',2025-05-16 04:34:48,242,50000,126909,69152,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user8%',2025-05-16 04:34:53,111,16384,41584,61744,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE '%failed',2025-05-16 04:35:14,475,50000,51700,71496,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE '%failed',2025-05-16 04:35:20,751,50000,51700,71072,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE '%failed',2025-05-16 04:35:25,356,50000,51700,68704,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE '%failed',2025-05-16 04:35:31,451,50000,51700,70992,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE subsystem LIKE 'network%',2025-05-16 04:35:49,94,50000,50361,67144,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE subsystem LIKE 'network%',2025-05-16 04:35:54,191,50000,50361,71016,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE subsystem LIKE 'network%',2025-05-16 04:35:59,192,50000,50361,69176,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE subsystem LIKE 'network%',2025-05-16 04:36:05,416,50000,50361,71016,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%',2025-05-16 04:36:27,556,50000,326909,77120,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%',2025-05-16 04:36:32,302,49152,321821,80848,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%',2025-05-16 04:36:38,751,50000,326909,80848,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%',2025-05-16 04:36:43,156,16384,107120,61952,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND event LIKE '%failed',2025-05-16 04:37:03,642,50000,251700,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND event LIKE '%failed',2025-05-16 04:37:08,340,49152,247460,80400,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND event LIKE '%failed',2025-05-16 04:37:14,368,50000,251700,81008,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND event LIKE '%failed',2025-05-16 04:37:19,350,49152,247460,84584,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND subsystem LIKE 'network%',2025-05-16 04:37:40,467,50000,250361,77416,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND subsystem LIKE 'network%',2025-05-16 04:37:45,276,49152,246121,80408,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND subsystem LIKE 'network%',2025-05-16 04:37:50,289,50000,250361,80936,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND subsystem LIKE 'network%',2025-05-16 04:37:56,425,49152,246121,80488,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:38:18,189,50000,178609,77128,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:38:25,1128,50000,178609,84680,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:38:30,265,50000,178609,80840,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:38:35,86,16384,59668,61864,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:38:53,315,50000,177270,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:38:58,303,50000,177270,84848,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:39:04,397,50000,177270,80848,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:39:09,87,16384,58329,61952,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:39:33,554,50000,102061,77280,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:39:38,357,50000,102061,84848,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:39:44,565,50000,102061,85432,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:39:49,315,50000,102061,84160,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:40:07,247,50000,407218,86616,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:40:13,853,49152,401282,92456,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:40:19,547,50000,407218,92360,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed',2025-05-16 04:40:24,229,16384,125204,61592,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:40:49,864,50000,404540,85960,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:40:54,551,49152,398604,92152,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:41:00,387,50000,404540,92056,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-16 04:41:05,95,16384,123865,61536,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:41:31,684,50000,304122,86632,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:41:37,866,49152,299034,92104,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:41:43,672,50000,304122,92152,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:41:48,294,49152,299034,92792,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:10,404,50000,286910,87032,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:16,328,50000,304412,97784,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:21,275,50000,286910,91672,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:26,87,16384,76413,62200,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:44,495,50000,486910,95592,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:50,492,49152,509096,103544,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:42:55,515,50000,515880,103288,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-16 04:43:01,539,16384,141949,62520,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21',2025-05-16 04:44:01,480,50000,200000,67336,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21',2025-05-16 04:44:07,238,8193,32784,44976,{'course_db.logs_ordered._minmax_count_projection'},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21',2025-05-16 04:44:12,205,8193,32784,44976,{'course_db.logs_with_indexes._minmax_count_projection'},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21',2025-05-16 04:44:17,413,8193,32784,41688,{'course_db.logs_with_projections._minmax_count_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user10%',2025-05-16 04:44:41,364,50000,126909,67232,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user10%',2025-05-16 04:44:46,296,50000,126909,70912,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user10%',2025-05-16 04:44:52,652,50000,126909,69152,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user10%',2025-05-16 04:44:57,322,8192,12569,59856,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE 'session%',2025-05-16 04:45:15,183,50000,51700,67232,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE 'session%',2025-05-16 04:45:20,260,50000,51700,70624,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE 'session%',2025-05-16 04:45:26,263,50000,51700,69152,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE 'session%',2025-05-16 04:45:31,278,50000,51700,70992,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE subsystem LIKE 'b%',2025-05-16 04:45:52,605,50000,50361,66952,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE subsystem LIKE 'b%',2025-05-16 04:45:57,377,50000,50361,70920,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE subsystem LIKE 'b%',2025-05-16 04:46:03,472,50000,50361,68712,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE subsystem LIKE 'b%',2025-05-16 04:46:08,202,50000,50361,71160,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%',2025-05-16 04:46:26,274,50000,326909,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%',2025-05-16 04:46:31,149,32768,223517,77592,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%',2025-05-16 04:46:37,402,32768,223517,73488,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%',2025-05-16 04:46:42,125,8192,45337,60064,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND event LIKE 'session%',2025-05-16 04:47:01,622,50000,251700,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND event LIKE 'session%',2025-05-16 04:47:07,824,32768,165540,73648,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND event LIKE 'session%',2025-05-16 04:47:12,415,32768,165540,73568,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND event LIKE 'session%',2025-05-16 04:47:18,623,32768,165540,73568,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND subsystem LIKE 'b%',2025-05-16 04:47:36,374,50000,250361,77176,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND subsystem LIKE 'b%',2025-05-16 04:47:42,346,32768,164201,72824,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND subsystem LIKE 'b%',2025-05-16 04:47:47,206,32768,164201,73656,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND subsystem LIKE 'b%',2025-05-16 04:47:52,372,32768,164201,73736,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:48:11,561,50000,178609,77160,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:48:17,924,50000,178609,84520,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:48:23,633,50000,178609,81000,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:48:28,170,8192,22461,59976,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:48:46,216,50000,177270,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:48:51,332,50000,177270,84528,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:48:57,518,50000,177270,81008,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:49:02,148,8192,21122,59984,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:49:22,686,50000,102061,77168,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:49:28,664,50000,102061,84528,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:49:33,348,50000,102061,80720,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:49:39,701,50000,102061,84528,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:49:57,487,50000,407218,86616,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:50:03,378,32768,257985,81112,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:50:08,348,32768,257985,80872,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%',2025-05-16 04:50:14,404,8192,55229,60152,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:50:33,435,50000,404540,91120,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:50:39,503,32768,256646,81440,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:50:44,712,32768,256646,81232,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-16 04:50:50,273,8192,53890,60160,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:08,442,50000,304122,86632,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:13,309,32768,198669,81232,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:18,265,32768,198669,81280,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:24,443,32768,198669,84728,{},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:43,666,50000,286910,86552,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:48,502,49152,283518,92024,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:54,699,50000,286910,92120,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:51:59,153,8192,31014,60152,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_full_scan'},SELECT count(*) FROM logs_full_scan WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:52:19,412,50000,486910,95368,{},{}
+{'course_db.logs_ordered'},SELECT count(*) FROM logs_ordered WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:52:24,327,24576,225578,80904,{},{}
+{'course_db.logs_with_indexes'},SELECT count(*) FROM logs_with_indexes WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:52:30,363,24576,225578,81832,{},{}
+{'course_db.logs_with_projections'},SELECT count(*) FROM logs_with_projections WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-16 04:52:35,115,8192,63782,60632,{'course_db.logs_with_projections.login_projection'},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21',2025-05-24 16:12:05,1071,8193,32784,41960,{'course_db.logs_with_indexes_v2._minmax_count_projection'},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user10%',2025-05-24 16:12:45,1149,49999,126907,69152,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE 'session%',2025-05-24 16:13:16,968,49999,51699,68864,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE subsystem LIKE 'b%',2025-05-24 16:13:46,1448,49999,50360,68712,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%',2025-05-24 16:14:19,1765,32768,223517,74152,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND event LIKE 'session%',2025-05-24 16:14:49,970,32768,165540,73992,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND subsystem LIKE 'b%',2025-05-24 16:15:12,187,32768,164201,74000,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user10%' AND event LIKE 'session%',2025-05-24 16:15:51,2120,49999,178606,84920,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-24 16:16:23,2361,49999,177267,81272,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-24 16:16:56,1326,49999,102059,81272,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%',2025-05-24 16:17:26,740,32768,257985,81696,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND subsystem LIKE 'b%',2025-05-24 16:17:50,357,32768,256646,81496,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-24 16:18:14,406,32768,198669,81096,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-24 16:18:41,1609,49999,286906,92496,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2012-11-21' AND login LIKE 'user10%' AND event LIKE 'session%' AND subsystem LIKE 'b%',2025-05-24 16:19:13,550,32768,287316,87920,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21',2025-05-24 16:21:59,408,9040,36172,44976,{'course_db.logs_with_indexes_v2._minmax_count_projection'},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user8%',2025-05-24 16:22:28,1435,49999,126907,69152,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE '%failed',2025-05-24 16:22:55,628,49999,51699,69312,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE subsystem LIKE 'network%',2025-05-24 16:23:25,836,49999,50360,69176,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%',2025-05-24 16:23:54,1076,49999,326903,81304,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND event LIKE '%failed',2025-05-24 16:24:18,550,49999,251695,81352,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND subsystem LIKE 'network%',2025-05-24 16:24:46,1117,49999,250356,81680,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user8%' AND event LIKE '%failed',2025-05-24 16:25:16,1440,49999,178606,80592,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-24 16:25:44,863,49999,177267,81672,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-24 16:26:06,353,49999,102059,81352,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed',2025-05-24 16:26:37,993,49999,407211,92672,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND subsystem LIKE 'network%',2025-05-24 16:27:04,1007,49999,404533,92528,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-24 16:27:33,389,49999,304116,92736,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-24 16:27:56,514,49999,286906,96760,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp <= '2020-11-21' AND login LIKE 'user8%' AND event LIKE '%failed' AND subsystem LIKE 'network%',2025-05-24 16:28:27,2487,49999,515872,104000,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21',2025-05-24 16:32:49,373,8193,32784,45024,{'course_db.logs_with_indexes_v2._minmax_count_projection'},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user7%',2025-05-24 16:33:11,1765,49999,126907,73256,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE 'error%',2025-05-24 16:33:33,1023,49999,51699,68712,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE subsystem LIKE 'u%',2025-05-24 16:33:52,887,49999,50360,69160,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%',2025-05-24 16:34:12,985,49999,326903,69408,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%',2025-05-24 16:34:29,348,41807,210735,77760,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND subsystem LIKE 'u%',2025-05-24 16:34:53,1347,41807,209396,77760,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user7%' OR event LIKE 'error%',2025-05-24 16:35:17,567,49999,178606,69232,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user7%' AND subsystem LIKE 'u%',2025-05-24 16:35:36,1590,49999,177267,81224,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-24 16:35:56,690,49999,102059,69240,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR event LIKE 'error%',2025-05-24 16:36:17,2004,49999,407211,69728,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-24 16:36:52,1105,49999,304116,69560,{},{}
+{'course_db.logs_with_indexes_v2'},SELECT count(*) FROM logs_with_indexes_v2 WHERE login LIKE 'user7%' AND event LIKE 'error%' OR subsystem LIKE 'u%',2025-05-24 16:37:11,736,49999,257936,69544,{},{}
+{'course_db.logs_with_indexes_v2'},"SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' OR subsystem LIKE 'u%'
+",2025-05-24 16:41:09,897,49999,404533,4241828,{},{}
+{'course_db.logs_with_indexes_v2'},"SELECT count(*) FROM logs_with_indexes_v2 WHERE timestamp BETWEEN '2007-11-21' AND '2025-11-21' OR login LIKE 'user7%' AND event LIKE 'error%' AND subsystem LIKE 'u%'
+",2025-05-24 16:43:22,896,49999,457932,4245756,{},{}

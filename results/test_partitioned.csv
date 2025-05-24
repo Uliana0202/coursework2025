@@ -1,0 +1,93 @@
+"tables","query","event_time","query_duration_ms","read_rows","read_bytes","memory_usage","projections","views"
+{'course_db.logs_partitioned'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_partitioned
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2013-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-23 10:58:40,170,998,84990,4069318,{},{}
+{'course_db.logs_full_scan'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_full_scan
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2013-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-23 10:58:48,850,50000,3399566,4115936,{},{}
+{'course_db.logs_ordered'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_ordered
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2013-04-16 20:19:58'
+ORDER BY timestamp DESC
+",2025-05-23 10:58:54,427,8192,571449,4052934,{},{}
+{'course_db.logs_with_indexes'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_with_indexes
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2013-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-23 10:58:59,671,8192,571449,4052438,{},{}
+{'course_db.logs_with_projections'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_with_projections
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2013-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-23 10:59:06,649,8192,571449,4053190,{},{}
+{'course_db.logs_full_scan'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM  logs_full_scan
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2014-04-16 20:19:58'
+ORDER BY timestamp DESC
+",2025-05-24 09:27:46,1609,50000,3399566,3906412,{},{}
+{'course_db.logs_ordered'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM  logs_ordered
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2014-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-24 09:27:53,878,8192,571449,3914326,{},{}
+{'course_db.logs_with_indexes'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM  logs_with_indexes
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2014-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-24 09:28:01,1997,8192,571449,3914342,{},{}
+{'course_db.logs_with_projections'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM  logs_with_projections
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2014-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-24 09:28:07,381,8192,571449,3914694,{},{}
+{'course_db.logs_partitioned'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_partitioned
+WHERE timestamp BETWEEN '2013-01-16 20:19:58' AND '2014-04-16 20:19:58'
+ORDER BY timestamp DESC",2025-05-24 09:28:14,1173,2950,251292,4548718,{},{}

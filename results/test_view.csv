@@ -1,0 +1,60 @@
+"tables","query","event_time","query_duration_ms","read_rows","read_bytes","memory_usage","projections","views"
+"{'course_db.failed_events_mv','course_db.logs_ordered'}","CREATE MATERIALIZED VIEW failed_events_mv
+ENGINE = MergeTree()
+ORDER BY (timestamp, login)
+POPULATE 
+AS
+SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_ordered
+WHERE event LIKE '%_failed'",2025-05-23 09:13:06,2412,50000,3428536,1776,{},{}
+{'course_db.failed_events_mv'},SELECT * FROM failed_events_mv,2025-05-23 09:13:11,156,6944,494299,3979849,{},{}
+{'course_db.logs_full_scan'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_full_scan
+WHERE event LIKE '%_failed'
+ORDER BY timestamp DESC",2025-05-23 09:13:17,501,50000,3399566,3789267,{},{}
+{'course_db.logs_ordered'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_ordered
+WHERE event LIKE '%_failed'
+ORDER BY timestamp DESC",2025-05-23 09:13:22,633,17232,1187853,4871495,{},{}
+{'course_db.logs_with_indexes'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_with_indexes
+WHERE event LIKE '%_failed'
+ORDER BY timestamp DESC",2025-05-23 09:13:28,112,9040,627540,4005678,{},{}
+{'course_db.logs_with_projections'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_with_projections
+WHERE event LIKE '%_failed'
+ORDER BY timestamp DESC",2025-05-23 09:13:35,958,17232,1187853,4872471,{},{}
+{'course_db.logs_partitioned'},"SELECT 
+    timestamp,
+    login,
+    event,
+    subsystem,
+    comment
+FROM logs_partitioned
+WHERE event LIKE '%_failed'
+ORDER BY timestamp DESC",2025-05-23 09:13:42,1619,49998,4264800,5369042,{},{}
