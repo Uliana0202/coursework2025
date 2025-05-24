@@ -610,14 +610,216 @@ ENGINE = Buffer(
 ```
 Назначение: Буферизация вставок для снижения нагрузки на сервер
 
-#### 📊 Пример данных
-
-##  Модуль generate_select_query.py
+###  Модуль update_optimization_projection.sql
+Скрипт для оптимизации структуры таблиц с использованием проекций в ClickHouse, включая продвинутые техники разделения данных.
 
 #### 🔍 Особенности
-#### ⚙️ Конфигурация
-#### 📂 Структура данных
+- Две стратегии оптимизации:
+  - Улучшенная версия таблицы с проекциями (logs_with_projections_v2)
+  - Разделение на неизменяемые данные и метаданные (logs_with_projections_v3 + logs_with_projections_metadata)
+- Поддержка экспериментальных возможностей ClickHouse:
+  - deduplicate_merge_projection_mode = 'rebuild'
+  - allow_experimental_projection_optimization = 1
+- Автоматическая материализация проекций для существующих данных
+
 #### 🛠 Техническая реализация
-#### 📊 Пример данных
+1. Версия 2: Улучшенная таблица с проекциями
+```
+CREATE TABLE logs_with_projections_v2 (
+    ...
+) ENGINE = ReplacingMergeTree()
+ORDER BY (timestamp)
+SETTINGS 
+    deduplicate_merge_projection_mode = 'rebuild',
+    index_granularity = 8192;
+
+-- Проекция для поиска по login
+ALTER TABLE logs_with_projections_v2
+ADD PROJECTION login_projection_v2 (
+    SELECT * ORDER BY (login, timestamp)
+);
+```
+Улучшения:
+- Использование ReplacingMergeTree для дедупликации
+- Настройка перестроения проекций при слиянии
+
+2. Версия 3: Разделение данных и метаданных
+```
+-- Основные данные (неизменяемые)
+CREATE TABLE logs_with_projections_v3 (
+    log_id UUID DEFAULT generateUUIDv4(),
+    timestamp DateTime,
+    login LowCardinality(String),
+    event LowCardinality(String),
+    subsystem LowCardinality(String),
+    PROJECTION login_projection (
+        SELECT * ORDER BY (login, timestamp)
+    )
+) ENGINE = MergeTree()
+ORDER BY (timestamp);
+
+-- Метаданные (изменяемые)
+CREATE TABLE logs_with_projections_metadata (
+    log_id UUID,
+    comment String,
+    description String
+) ENGINE = ReplacingMergeTree()
+ORDER BY (log_id);
+```
+Преимущества:
+- Разделение часто и редко изменяемых данных
+- Сохранение возможности обновления метаданных
+- Эффективное использование проекций для основных данных
+
+Миграция данных
+```
+-- Перенос в улучшенную таблицу
+INSERT INTO logs_with_projections_v2 
+SELECT * FROM logs_with_projections;
+
+-- Перенос в раздельную структуру
+INSERT INTO logs_with_projections_v3 (...)
+SELECT ... FROM logs_with_projections;
+
+INSERT INTO logs_with_projections_metadata
+SELECT ... FROM logs_with_projections
+JOIN logs_with_projections_v3 ...;
+```
+
+
+###  Модуль update_optimization_indexed.sql
+Скрипт для оптимизации таблиц с индексами в ClickHouse, включая улучшенные версии индексов и разделение данных.
+
+#### 🔍 Особенности
+- Две стратегии оптимизации:
+  - Улучшенная версия таблицы с индексами (logs_with_indexes_v2)
+  - Разделение на основные данные и метаданные (logs_with_indexes_v3 + logs_with_indexes_metadata)
+- Оптимизированные индексы пропускания:
+  - Bloom Filter с настраиваемой гранулярностью
+  - Полная материализация индексов
+- Поддержка версионирования через ReplacingMergeTree
+
+#### 🛠 Техническая реализация
+1. Версия 2: Улучшенная таблица с индексами
+```
+CREATE TABLE logs_with_indexes_v2 (
+    ...
+) ENGINE = ReplacingMergeTree()
+ORDER BY (timestamp)
+SETTINGS index_granularity = 8192;
+
+-- Индексы Bloom Filter
+ALTER TABLE logs_with_indexes_v2
+    ADD INDEX login_index_v2 login TYPE bloom_filter GRANULARITY 4;
+```
+Улучшения:
+- Оптимизированные Bloom Filter индексы (гранулярность 4)
+- Поддержка версионирования данных
+
+2. Версия 3: Разделение данных и метаданных
+```
+-- Основные данные
+CREATE TABLE logs_with_indexes_v3 (
+    log_id UUID,
+    timestamp DateTime,
+    login LowCardinality(String),
+    event LowCardinality(String),
+    subsystem LowCardinality(String)
+) ENGINE = MergeTree()
+ORDER BY (timestamp);
+
+-- Метаданные
+CREATE TABLE logs_with_indexes_metadata (
+    log_id UUID,
+    comment String,
+    description String
+) ENGINE = ReplacingMergeTree()
+ORDER BY (log_id);
+```
+Преимущества:
+- Разделение часто и редко изменяемых данных
+- Возможность обновления метаданных без перестроения индексов
+- Более эффективное использование индексов для основных данных
+
+Миграция данных
+```
+-- Перенос в улучшенную таблицу
+INSERT INTO logs_with_indexes_v2 
+SELECT * FROM logs_with_indexes;
+
+-- Перенос в раздельную структуру
+INSERT INTO logs_with_indexes_v3 (...)
+SELECT ... FROM logs_with_indexes;
+
+INSERT INTO logs_with_indexes_metadata
+SELECT ... FROM logs_with_indexes
+JOIN logs_with_indexes_v3 ...;
+```
+
+###  Модуль test_update.sql
+Скрипт для тестирования производительности операций UPDATE в ClickHouse на различных типах таблиц с последующим сбором метрик.
+
+#### 🔍 Особенности
+- Сравнение производительности UPDATE на 6 типах таблиц:
+  - Базовые таблицы (logs_with_indexes, logs_with_projections)
+  - Оптимизированные версии (_v2)
+  - Раздельные структуры (_v3 + _metadata)
+- Тестирование разных сценариев обновления:
+  - Обновление по временной метке
+  - Обновление по подсистеме
+- Автоматический сбор метрик:
+  - Время выполнения
+  - Использование ресурсов
+  - Затронутые строки
+- Оптимизация таблиц после обновления
+
+#### 🛠 Техническая реализация
+Примеры тестовых запросов
+```
+-- Обновление в таблице с индексами
+ALTER TABLE logs_with_indexes 
+UPDATE comment = 'two tee to two two'
+WHERE subsystem = '2000-07-05 08:27:55';
+
+-- Обновление в раздельной структуре (только метаданные)
+ALTER TABLE logs_with_indexes_metadata 
+UPDATE comment = 'two tee to two two'
+WHERE log_id IN (SELECT log_id FROM logs_with_indexes_v3 WHERE timestamp = '2000-07-05 08:27:55');
+```
+Сбор метрик
+```
+-- Сбор статистики по UPDATE
+INSERT INTO test_update
+SELECT * FROM system.query_log
+WHERE query_duration_ms > 0
+AND query LIKE 'ALTER TABLE %';
+
+-- Сбор статистики по OPTIMIZE
+INSERT INTO test_update
+SELECT * FROM system.query_log
+WHERE query_duration_ms > 0
+AND query LIKE 'OPTIMIZE TABLE %';
+```
+
+Анализ результатов
+Пример запроса для сравнения производительности:
+```
+SELECT 
+    tables,
+    avg(query_duration_ms) AS avg_update_time,
+    avg(read_rows) AS avg_rows_read,
+    avg(memory_usage) AS avg_memory
+FROM test_update
+WHERE query LIKE 'ALTER TABLE%'
+GROUP BY tables
+ORDER BY avg_update_time;
+```
+
+###  Модуль update_optimization_projection.sql
+
+#### 🔍 Особенности
+
+
+#### 🛠 Техническая реализация
 
 
